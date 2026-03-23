@@ -22,10 +22,10 @@ This repository contains the analytical pipeline for modeling and predicting rur
 
 ---
 
-## 🛠️ Methodology & Modeling
-* **Model:** Random Forest Regression.
-* **Validation:** LNMO Cross-Validation (detailed in the `Codes/` folder).
-* **Scope:** 43 markets across Tanzania, focused on supporting site-specific economic advice.
+## 🛠️ Methodology & Scope
+* **Model:** Random Forest Regression and Autoregressive Random Forest.
+* **Validation:** Temporal split, Random split, and LNMO Cross-Validation.
+* **Impact:** Our framework combines periodic market reports with open spatial data (travel times, climate, population density) to provide low-cost, forward-looking price estimates. These outputs can guide targeted support measures and feed simple mobile alerts and inform targeted policy recommendations.
 
 ---
 
