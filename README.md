@@ -1,4 +1,4 @@
-# Tanzania Agricultural Price Predictions (ART Project)
+# Tanzania Agricultural Price Predictions
 
 ## 📌 Project Overview
 This repository contains the analytical pipeline for modeling and predicting rural wholesale prices for 8 Crop commodities ( maize, rice, bean, wheat, potato, bulrush millet, finger millet, and sorghum)  across **43 markets in Tanzania**.
