@@ -19,12 +19,14 @@ registerDoParallel(cores = parallel::detectCores() - 1)
 
 set.seed(1983)
 unique_markets <- unique(mypts$Market)
+unique_markets
 total_markets <- length(unique_markets)
+total_markets
 
 market_holdout_results <- list()
 
 # SPATIAL CROSS-VALIDATION LOOP
-for (num_holdout in 1:(total_markets - 1)) {
+for (num_holdout in seq(2, total_markets - 1, by = 5)) {
   
   r2_vals <- foreach(rep = 1:50, .combine = c,
                      .packages = c("randomForest", "dplyr"),
@@ -36,19 +38,18 @@ for (num_holdout in 1:(total_markets - 1)) {
                        train_subset <- mypts %>% filter(!Market %in% heldout_markets)
                        test_subset  <- mypts %>% filter(Market %in% heldout_markets)
                        
-                       # Skip if too few test observations
+                       
                        if (nrow(test_subset) < 10) return(NA_real_)
                        
-                       # Tune mtry ONLY on training data
+                       # Tune mtry only on training data
                        trf <- tuneRF(
                          x = train_subset[, predictors_lnmo],
                          y = train_subset$pkg_real,
                          stepFactor = 1.5,
                          improve = 0.01,
-                         ntreeTry = 300,
+                         ntreeTry = 500,
                          plot = FALSE,
-                         trace = FALSE
-                       )
+                         trace = FALSE)
                        
                        best_mtry_val <- as.numeric(trf[which.min(trf[, 2]), 1])
                        
@@ -63,22 +64,22 @@ for (num_holdout in 1:(total_markets - 1)) {
                        preds <- predict(model_rf, newdata = test_subset)
                        actual_vals <- test_subset$pkg_real
                        
-                       # True out-of-sample R²
+                       # Calculate R²
                        if (length(unique(actual_vals)) > 1) {
-                         r2 <- 1 - sum((actual_vals - preds)^2) / sum((actual_vals - mean(actual_vals))^2)
-                         return(r2)
+                         return(summary(lm(actual_vals ~ preds))$r.squared)
                        } else {
                          return(NA_real_)
                        }
                      }
-  
-  # Store results
   market_holdout_results[[num_holdout]] <- data.frame(
     Markets_Heldout = num_holdout,
     Avg_R2 = mean(r2_vals, na.rm = TRUE),
     SD_R2 = sd(r2_vals, na.rm = TRUE)
   )
+  
+  cat("Completed LNMO for N =", num_holdout, "\n")
 }
+
 
 # Combine results
 market_holdout_df <- bind_rows(market_holdout_results)

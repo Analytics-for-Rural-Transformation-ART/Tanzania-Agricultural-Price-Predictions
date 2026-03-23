@@ -7,7 +7,7 @@ library(tibble)
 
 # Figure 1. Market locations in Tanzania for which local price data were obtained. The background layer displays long-term average rainfall (January 2000-January 2026).
 
-# Convert mkt_pts to a spatial object
+# Convert market points to a spatial object
 mkt_pts <- vect(prices.monthly.long, geom=c("Longitude", "Latitude"), crs=crs(tza0), keepgeom=TRUE)  
 
 # Bring in chirps data
@@ -27,7 +27,7 @@ Chirps_Tza <- crop(c_rasters, tza1)
 Chirps_Tza <- classify(Chirps_Tza, cbind(-9999,NA))
 plot(Chirps_Tza)
 
-# mean annual rainfall for each year from 2000 to 2024
+# mean annual rainfall for each year from 2000 to 2026
 years <- 2000:2026
 layers_by_year <- split(1:nlyr(Chirps_Tza), ceiling(seq_along(1:nlyr(Chirps_Tza)) / 12))
 
@@ -41,7 +41,7 @@ annual_rainfall_rasters <- lapply(seq_along(years), function(i) {
 rainfall_stack <- rast(annual_rainfall_rasters)
 plot(rainfall_stack)
 
-# Get the long term average rainfall from 2000 to 2025
+# Get the long term average rainfall from 2000 to 2026
 rain_mean <- terra::mean(rainfall_stack)
 plot(rain_mean)
 
