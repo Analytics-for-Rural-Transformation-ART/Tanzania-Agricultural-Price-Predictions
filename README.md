@@ -1,7 +1,7 @@
 # Tanzania Agricultural Price Predictions
 
 ## 📌 Overview
-This repository contains the analytical pipeline for modeling and predicting rural wholesale prices for 8 Crop commodities ( maize, rice, bean, wheat, potato, bulrush millet, finger millet, and sorghum)  across **43 markets in Tanzania**.
+This repository contains the analytical pipeline for modeling and predicting rural wholesale prices for 8 Crop commodities (maize, rice, bean, wheat, potato, bulrush millet, finger millet, and sorghum)  across **43 markets in Tanzania**.
 
 **🔗 Interactive Report:** [View the full analysis and 2025 predictions here](https://analytics-for-rural-transformation-art.github.io/Tanzania-Agricultural-Price-Predictions/)
 
