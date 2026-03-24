@@ -10,9 +10,10 @@ This repository contains the analytical pipeline for modeling and predicting rur
 ## 📂 Repository Structure
 
 ### 📁 Codes/
+* **`Tanzania_price_predictions-notebook.Rmd`**: This is the primary workflow. Documents model fitting, evaluation, and comparison of predicted prices against regional aggregates.
 * **`Data_Extraction_from_PDF_To_Excel_and_cleaning.R`**: Automates data extraction from Tanzania Ministry of Industry and Trade PDF reports. Includes cleaning of  month-by-month data.
 * **`LNMO-CV-Analysis.R`**: Contains the **Leave-N-Markets-Out (LNMO)** cross-validation strategy, which evaluates the	sensitivity of predictive accuracy as increasingly more markets are held out from training.
-* **`Tanzania_price_predictions-notebook.Rmd`**: This is the primary workflow. Documents model fitting, evaluation, and comparison of predicted prices against regional aggregates.
+
 
 ### 📁 Data/
 * **`Tanzania_Price_Data_AllCrops_with_Coordinates_5.csv`**: This is the master dataset. It contains cleaned, compiled, and geocoded prices for all crops from **May 2021 to January 2026**.
