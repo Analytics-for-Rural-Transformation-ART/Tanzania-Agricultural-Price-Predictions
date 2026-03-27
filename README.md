@@ -26,7 +26,7 @@ This repository contains the analytical pipeline for modeling and predicting rur
 ## 🛠️ Methodology & Scope
 * **Model:** Random Forest Regression and Autoregressive Random Forest.
 * **Validation:** Temporal split, Random split, and LNMO Cross-Validation.
-* **Impact:** Our framework combines periodic market reports with open spatial data (travel times, climate, population density) to provide low-cost, forward-looking price estimates. These outputs can guide targeted support measures and feed simple mobile alerts and inform  policy.
+* **Impact:** Our framework combines periodic market reports with open spatial data (travel times, climate, population density) to provide low-cost, forward-looking price estimates across space and time. These outputs can guide targeted support measures and feed simple mobile alert systems that require price information.
 
 ---
 
