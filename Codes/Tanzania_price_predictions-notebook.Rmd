@@ -14,7 +14,7 @@ css: styles.css
 
 <div class="custom-citation">
 Suggested citation: 
-Madaga, Lavinia, Jordan Chamberlin, Bisrat Gebrekidan, Maxwell Mkondiwa, Nicholaus Kuboja, and Silva Joao Vasco, 2026. “Predictive mapping of wholesale crop prices for rural areas in Tanzania.” https://github.com/Analytics-for-Rural-Transformation-ART/Tanzania-Agricultural-Price-Predictions
+Madaga Lavinia, Jordan Chamberlin, Bisrat Gebrekidan, Maxwell Mkondiwa, Nicholaus Kuboja, and Silva Joao Vasco, 2026. “Predictive mapping of wholesale crop prices for rural areas in Tanzania.” https://github.com/Analytics-for-Rural-Transformation-ART/Tanzania-Agricultural-Price-Predictions
 </div>
 
 # Introduction
@@ -931,7 +931,7 @@ image.plot(zlim = c(min_maize, max_maize), legend.only = TRUE,
            axis.args = list(at = legend_breaks, labels = legend_breaks, cex.axis = 0.9),
            legend.args = list(text = "", side = 4, line = 3.5, cex = 0.8))
 
-output_dir_Maize <- "C:/H/Tanzania Price data/Datasets/Pred-plots/Maize"
+output_dir_Maize <- "C:/Users/LMADAGA/OneDrive - CGIAR/H/Tanzania Price data/Datasets/Pred-plots/Maize"
 
 for (i in 1:length(predictions_maize)) {
   month_str <- sprintf("%02d", i)
@@ -1028,7 +1028,7 @@ image.plot(zlim = c(min_bean, max_bean), legend.only = TRUE,
            legend.args = list(text = "", side = 2, line = 2, cex = 0.9))
 
 
-output_dir_beans <- "C:/H/Tanzania Price data/Datasets/Pred-plots/beans"
+output_dir_beans <- "C:/Users/LMADAGA/OneDrive - CGIAR/H/Tanzania Price data/Datasets/Pred-plots/beans"
 
 for (i in 1:length(predictions_beans)) {
   month_str <- sprintf("%02d", i)
@@ -1123,7 +1123,7 @@ image.plot(zlim = c(min_rice, max_rice), legend.only = TRUE,
            axis.args = list(at = legend_breaks, labels = legend_breaks, cex.axis = 0.9), 
            legend.args = list(text = "", side = 1, line = 2, cex = 0.9))
 
-output_dir_rice <- "C:/H/Tanzania Price data/Datasets/Pred-plots/rice"
+output_dir_rice <- "C:/Users/LMADAGA/OneDrive - CGIAR/H/Tanzania Price data/Datasets/Pred-plots/rice"
 
 for (i in 1:length(predictions_rice)) {
   month_str <- sprintf("%02d", i)
@@ -1218,7 +1218,7 @@ image.plot(zlim = c(min_sorghum, max_sorghum), legend.only = TRUE,
            axis.args = list(at = legend_breaks, labels = legend_breaks, cex.axis = 0.9), 
            legend.args = list(text = "", side = 1, line = 2, cex = 0.9))
 
-output_dir_sorghum <- "C:/H/Tanzania Price data/Datasets/Pred-plots/sorghum"
+output_dir_sorghum <- "C:/Users/LMADAGA/OneDrive - CGIAR/H/Tanzania Price data/Datasets/Pred-plots/sorghum"
 
 for (i in 1:length(predictions_sorghum)) {
   month_str <- sprintf("%02d", i)
@@ -1314,7 +1314,7 @@ image.plot(zlim = c(min_bmillet, max_bmillet), legend.only = TRUE,
            axis.args = list(at = legend_breaks, labels = legend_breaks, cex.axis = 0.9), 
            legend.args = list(text = "", side = 1, line = 2, cex = 0.9))
 
-output_dir_bmillet <- "C:/H/Tanzania Price data/Datasets/Pred-plots/bmillet"
+output_dir_bmillet <- "C:/Users/LMADAGA/OneDrive - CGIAR/H/Tanzania Price data/Datasets/Pred-plots/bmillet"
 
 for (i in 1:length(predictions_bmillet)) {
   month_str <- sprintf("%02d", i)
@@ -1408,7 +1408,7 @@ image.plot(zlim = c(min_fmillet, max_fmillet), legend.only = TRUE,
            axis.args = list(at = legend_breaks, labels = legend_breaks, cex.axis = 0.9), 
            legend.args = list(text = "", side = 1, line = 2, cex = 0.9))
 
-output_dir_fmillet <- "C:/H/Tanzania Price data/Datasets/Pred-plots/fmillet"
+output_dir_fmillet <- "C:/Users/LMADAGA/OneDrive - CGIAR/H/Tanzania Price data/Datasets/Pred-plots/fmillet"
 
 for (i in 1:length(predictions_fmillet)) {
   month_str <- sprintf("%02d", i)
@@ -1506,7 +1506,7 @@ image.plot(zlim = c(min_wheat, max_wheat), legend.only = TRUE,
            axis.args = list(at = legend_breaks, labels = legend_breaks, cex.axis = 0.9), 
            legend.args = list(text = "", side = 1, line = 2, cex = 0.9))
 
-output_dir_wheat <- "C:/H/Tanzania Price data/Datasets/Pred-plots/wheat"
+output_dir_wheat <- "C:/Users/LMADAGA/OneDrive - CGIAR/H/Tanzania Price data/Datasets/Pred-plots/wheat"
 
 #save
 for (i in 1:length(predictions_wheat)) {
@@ -1606,7 +1606,7 @@ image.plot(zlim = c(min_potato, max_potato), legend.only = TRUE,
            axis.args = list(at = legend_breaks, labels = legend_breaks, cex.axis = 0.9), 
            legend.args = list(text = "", side = 1, line = 2, cex = 0.9))
 
-output_dir_potato <- "C:/H/Tanzania Price data/Datasets/Pred-plots/potato"
+output_dir_potato <- "C:/Users/LMADAGA/OneDrive - CGIAR/H/Tanzania Price data/Datasets/Pred-plots/potato"
 
 #save
 for (i in 1:length(predictions_potato)) {
@@ -1615,7 +1615,6 @@ for (i in 1:length(predictions_potato)) {
   output_path <- file.path(output_dir_potato, output_filename)
   writeRaster(predictions_potato[[i]], output_path, overwrite = TRUE)
 }
-
 ```
 
 
@@ -1929,25 +1928,24 @@ knitr::kable(comparison_df_wide3, digits = 2, caption = "Table 3: Model Comparis
 write.csv(comparison_df_wide3, "Train-Test-Validation-results.csv", row.names = FALSE)
 ```
  
-# Comparison of regional and predicted rural maize prices
+# Comparison of regional and predicted rural maize prices for January 2025
 ```{r}
 # Comparison of regional and predicted rural maize prices
+# We use the deflated prices (pkg_real) for 2025
 mypts_df <- as.data.frame(mypts) %>% 
   filter(Year == 2025, Crop == "Maize") %>%
-  # Explicitly use dplyr::select to avoid conflicts with terra
-  dplyr::select(Region_GADM, Month, pkg_real)
+  dplyr::select(Region_GADM, Month, pkg_real) 
 ```
 
 ```{r}
+# The comparison loop
 comparison_list <- list()
 
-# Comparison loop
 for (m in 1:12) {
   message("Processing month: ", m)
   
-  # Load Prediction Raster 
-  pred_file <- sprintf("C:/H/Tanzania Price data/Datasets/Pred-plots/Maize/maize_price_rf_pred_%02d.tif", m)
-  
+  # Load Prediction Raster (trained on deflated prices)
+  pred_file <- sprintf("C:/Users/LMADAGA/OneDrive - CGIAR/H/Tanzania Price data/Datasets/Pred-plots/Maize/maize_price_rf_pred_%02d.tif", m)
   if (!file.exists(pred_file)) next
   
   pred_maize <- rast(pred_file) |> project(crs(tza1))
@@ -2005,9 +2003,7 @@ comparison_all$Month_Label <- factor(comparison_all$Month, levels = 1:12, labels
 january_comparison <- comparison_all %>%
   filter(Month == 1) 
 
-#png("C:/H/Tanzania Price data/Datasets/figures_and_maps/Figure_9_January_Regional_Comparison.png", width = 2400, height = 1600, res = 300)
-
-ggplot(january_comparison, aes(x = Region, y = Diff)) +
+mrp <- ggplot(january_comparison, aes(x = Region, y = Diff)) +
   geom_boxplot(fill = "#A6CEE3", color = "black", outlier.size = 0.3, alpha = 0.7, size = 0.5) +
   geom_hline(yintercept = 0, linetype = "dashed", color = "red", linewidth = 0.6) +
   # Note: facet_wrap is removed to focus on the single month
@@ -2019,12 +2015,12 @@ ggplot(january_comparison, aes(x = Region, y = Diff)) +
   ) +
   theme_minimal(base_size = 12) +
   theme(
+    axis.title.y = element_text(size = 9),
     axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1, size = 9), # Tilted for better readability
     panel.grid.minor = element_blank(),
-    panel.border = element_rect(color = "black", fill = NA, linewidth = 0.5)
-  )
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 0.5))
 
-# dev.off()
+mrp
 ```
 
 
